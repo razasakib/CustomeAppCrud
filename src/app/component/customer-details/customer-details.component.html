@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-lg-4 ">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width:486px;;margin-left: 412px;margin-top: 12px;">
+             <h3 class="h4 text-info text-center">Customer Details  !</h3>
+              <hr/>
+        
+                <div *ngIf="customer" >
+                <div>
+                    <label><b>ssn_Id </b></label> {{customer.ssn_Id}}
+                </div>
+                <div>
+                    <label><b>Customer_name: </b></label> {{customer.customer_name}}
+                </div>
+                <div>
+                    <label><b>Age: </b></label> {{customer.age}}
+                </div>  
+                <div>
+                    <label><b>Address </b></label> {{customer.address}}
+                </div>
+                <div>
+                    <label><b>State: </b></label> {{customer.state}}
+                </div>
+                <div>
+                    <label><b>City: </b></label> {{customer.city}}
+                </div> 
+                
+                
+                <br>
+                <br>
+            </div>        
+        
+        <button (click)="list()" class="btn btn-primary">Back to Customer List</button><br>
+       
+       </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="con">
+      <h3 class="h4 text-info text-center">Create Customer Management Account!</h3>
+       <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: 544px;margin-left: 279px;margin-top: 12px;">
+          <div style="width: 400px;margin-left: 58px;">
+            <form (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="ssn_Id">SSN_Id</label>
+                <input type="text" class="form-control" id="ssn_Id" required  name="ssn_Id" [(ngModel)]="customer.ssn_Id">
+              </div>
+          
+              <div class="form-group">
+                <label for="customer_name">Customer Name</label>
+                <input type="text" class="form-control" id="customer_name" required  name="customer_name" [(ngModel)]="customer.customer_name">
+              </div>
+          
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" id="age" required  name="age" [(ngModel)]="customer.age">
+              </div>
+          
+              <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" required  name="address"  [(ngModel)]="customer.address">
+                </div>
+          
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <input type="text" class="form-control" id="state" required  name="state" [(ngModel)]="customer.state">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" required  name="city" [(ngModel)]="customer.city">
+                  </div>
+          
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+          </div>
+          <div [hidden]="!message">
+  
+            <h2>{{message}}</h2>
+          <h4>You submitted successfully!</h4>
+           <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+      </div>
+    </div>
+   </div>
+  </div>
+ <!-- <app-customer-list></app-customer-list>-->

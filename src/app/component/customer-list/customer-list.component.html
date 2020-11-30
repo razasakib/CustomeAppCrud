@@ -1,0 +1,147 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 class="text-info text-center">Customers List!!</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th> ID</th>
+            <th>SSN_ID</th>
+            <th>Customer NAme</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Remove Records</th>
+            <th>Details of Customer</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!--<tr *ngFor="let employee of employees | async">
+          
+          </tr>-->  
+          <tr *ngFor="let customer of customer ">
+            <td>{{customer.customer_Id}}</td>
+            <td>{{customer.ssn_Id}}</td>
+            <td>{{customer.customer_name}}</td>
+            <td>{{customer.age}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.state}}</td>
+            <td>{{customer.city}}</td>
+            <td><button (click)="deleteCustomerData(customer.customer_Id)" class="btn btn-danger">Delete</button></td>
+            <td>
+              <button (click)="customerDetails(customer.customer_Id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+              <button (click)="customerDetailsByModal(customer.customer_Id,form)" class="btn btn-info" style="margin-left: 10px">Pup up Modal</button>
+           </td>
+           <td>
+            <button (click)="editCustomer(customer.customer_Id,updateForm)" class="btn btn-info" style="margin-left: 10px">Edit</button>
+           </td>
+            
+
+            
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <ng-template #form>
+       
+          <div class="modal-header">
+            <h3 class="h4 text-info text-center">Customer Details  !</h3>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+     
+          <div>
+             
+              <hr/>
+        
+              <div *ngIf="customers" style="margin-left: 38px;
+              margin-top: 42px;">
+                <div>
+                    <label><b>ssn_Id </b></label> {{customers.ssn_Id}}
+                </div>
+                <div>
+                    <label><b>Customer_name: </b></label> {{customers.customer_name}}
+                </div>
+                <div>
+                    <label><b>Age: </b></label> {{customers.age}}
+                </div>  
+                <div>
+                    <label><b>Address </b></label> {{customers.address}}
+                </div>
+                <div>
+                    <label><b>State: </b></label> {{customers.state}}
+                </div>
+                <div>
+                    <label><b>City: </b></label> {{customers.city}}
+                </div> 
+             </div>    
+                
+                <br>
+                <br>
+            </div>        
+</ng-template>
+
+
+
+
+<!--Update or edit-->
+<ng-template #updateForm>
+        <div class="modal-header">
+          <h3 class="h4 text-info text-center" style="margin-left: 83px;">Update Customer Account!!</h3>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div [hidden]="!updateData"> 
+          <h5 class="badge-info">{{updateData}}</h5>
+          <h4 class="badge badge-pill">Updated successfully...</h4>
+       </div>
+          <div style="width: 400px;margin-left: 58px;" *ngIf="customers">
+            
+            <form (ngSubmit)="onUpdate()">
+              <div class="form-group">
+                <label for="ssn_Id">SSN_Id</label>
+                <input type="text" class="form-control" id="ssn_Id" required  name="ssn_Id" [(ngModel)]="customers.ssn_Id">
+              </div>
+          
+              <div class="form-group">
+                <label for="customer_name">Customer Name</label>
+                <input type="text" class="form-control" id="customer_name" required  name="customer_name" [(ngModel)]="customers.customer_name">
+              </div>
+          
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" id="age" required  name="age" [(ngModel)]="customers.age">
+              </div>
+          
+              <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" required  name="address"  [(ngModel)]="customers.address">
+                </div>
+          
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <input type="text" class="form-control" id="state" required  name="state" [(ngModel)]="customers.state">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" required  name="city" [(ngModel)]="customers.city">
+                  </div>
+          
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+              <!--Message-->
+      
+           <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+     
+    
+  </div>
+</ng-template>
+  
+ 

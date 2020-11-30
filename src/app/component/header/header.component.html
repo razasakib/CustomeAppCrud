@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <h2 class="navbar-brand" href="#">Customer Management App</h2>
+ 
+ <!--redirectTo login page -->
+ <ul class="nav nav-tabs">
+  <!--  <li class="nav-item"><a  routerLinkActive="active" routerLink="/" class="nav-link">Home</a></li>-->
+ <!-- <li class="nav-item"><a routerLinkActive="active" routerLink="home" [routerLinkActiveOptions]="{exact:true}"
+      class="nav-link">Home</a></li>-->
+  <li class="nav-item"><a routerLinkActive="active" routerLink="create" class="nav-link">Create Account</a></li>
+  <li class="nav-item"><a routerLinkActive="active" routerLink="list" class="nav-link">Customer Details Table</a></li>
+
+</ul>
+     
+   
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+ 
+</nav>
+<router-outlet></router-outlet>
